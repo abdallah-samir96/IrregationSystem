@@ -20,6 +20,12 @@ public class PlotServiceImpl implements PlotService {
     public PlotServiceImpl(PlotRepository plotRepository) {
         this.plotRepository = plotRepository;
     }
+
+    @Override
+    public void create(PlotDTO plotDTO) {
+        var plot = new PlotMapper().toEntity(plotDTO);
+        plotRepository.save(plot);
+    }
     @Override
     public List<PlotDTO> getAll(Integer offset, Integer limit) {
         int page = offset / limit;

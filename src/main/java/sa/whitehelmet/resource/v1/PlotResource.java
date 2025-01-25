@@ -1,12 +1,10 @@
 package sa.whitehelmet.resource.v1;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import sa.whitehelmet.model.dto.PlotDTO;
 import sa.whitehelmet.model.dto.WhiteHelmetResponse;
 import sa.whitehelmet.service.PlotService;
@@ -22,6 +20,10 @@ public class PlotResource {
        this.plotService = plotService;
    }
 
+    @PostMapping
+    public void create(@RequestBody @Valid PlotDTO plotDTO) {
+        plotService.create(plotDTO);
+    }
    @GetMapping
    public ResponseEntity<WhiteHelmetResponse<List<PlotDTO>>> getAll(
            @RequestParam(defaultValue = "0") @Min(value = 0, message = "Offset Should be > 0") Integer offset,

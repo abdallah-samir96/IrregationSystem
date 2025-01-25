@@ -1,6 +1,7 @@
 package sa.whitehelmet.model.mappers;
 
 import sa.whitehelmet.model.Plot;
+import sa.whitehelmet.model.PlotStatus;
 import sa.whitehelmet.model.dto.PlotDTO;
 
 public class PlotMapper implements Mapper<Plot, PlotDTO>{
@@ -9,7 +10,7 @@ public class PlotMapper implements Mapper<Plot, PlotDTO>{
         var plot = new Plot();
         plot.setName(dto.name());
         plot.setDescription(dto.description());
-        plot.setStatus(dto.status());
+        plot.setStatus(dto.status() == null? PlotStatus.NEW: dto.status());
         plot.setIrrigationPeriodInHours(dto.irrigationPeriodInHours());
         return plot;
     }
