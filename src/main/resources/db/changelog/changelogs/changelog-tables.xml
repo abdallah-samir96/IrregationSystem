@@ -5,4 +5,8 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
+    <changeSet id="TABLE-001" author="abdallahsameer22@gmail.com" runOnChange="false">
+        <comment>creating the plot of land table</comment>
+        <sqlFile path="./tables/table-001.sql" relativeToChangelogFile="true" splitStatements="true"/>
+    </changeSet>
 </databaseChangeLog>
