@@ -5,7 +5,8 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
-    <include file="/changelogs/changelog-tables.xml" id="001" author="abdallah" relativeToChangelogFile="true"/>
-    <include file="/changelogs/changelog-seeds.xml"  id="002" author="abdallah" relativeToChangelogFile="true"/>
-
+    <changeSet id="SEED-001" author="abdallahsameer22@gmail.com" runOnChange="false">
+        <comment>Adding new rows into plot of land table</comment>
+        <sqlFile path="./seeds/seed-001.sql" relativeToChangelogFile="true" splitStatements="true"/>
+    </changeSet>
 </databaseChangeLog>
