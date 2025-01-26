@@ -10,7 +10,7 @@ import jakarta.validation.constraints.NotNull;
 public class PlotRequestDTO {
     @NotNull
     private Long id;
-    @NotNull
+    @NotNull(message = "irrigationPeriodInHours should not be null")
     @Min(value = 1, message = "irrigationPeriodInHours should be greater than 0")
     private Integer irrigationPeriodInHours;
     @Min(value = 1, message = "water amount in liter should be greater than 0")

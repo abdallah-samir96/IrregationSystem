@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sa.whitehelmet.model.dto.PlotDTO;
 import sa.whitehelmet.model.dto.PlotRequestDTO;
+import sa.whitehelmet.model.dto.PlotUpdateRequestDTO;
 import sa.whitehelmet.model.dto.WhiteHelmetResponse;
 import sa.whitehelmet.service.PlotService;
 
@@ -43,8 +44,12 @@ public class PlotResource {
    }
 
     @PutMapping("/configure")
-    public void configure(@RequestBody @Valid PlotRequestDTO plotDTO) {
+    public void configure(@Valid @RequestBody PlotRequestDTO plotDTO) {
         plotService.configure(plotDTO);
+    }
+    @PutMapping("/edit")
+    public void edit(@Valid @RequestBody PlotUpdateRequestDTO dto) {
+        plotService.update(dto);
     }
 
 }

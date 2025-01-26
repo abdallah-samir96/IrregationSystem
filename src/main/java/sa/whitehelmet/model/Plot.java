@@ -1,6 +1,7 @@
 package sa.whitehelmet.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.ZonedDateTime;
 
@@ -22,8 +23,10 @@ public class Plot {
     @Column(name = "amount_of_water")
     private Integer waterAmount;
     @Column(name = "created_at", nullable = false)
+    @CreationTimestamp
     private ZonedDateTime createdAt;
     @Column(name = "irrigated_at")
+    @CreationTimestamp
     private ZonedDateTime irrigatedAt;
 
 

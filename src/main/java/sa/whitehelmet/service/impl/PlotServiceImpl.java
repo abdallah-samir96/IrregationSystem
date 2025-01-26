@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import sa.whitehelmet.exception.PlotNotFoundException;
 import sa.whitehelmet.model.dto.PlotDTO;
 import sa.whitehelmet.model.dto.PlotRequestDTO;
+import sa.whitehelmet.model.dto.PlotUpdateRequestDTO;
 import sa.whitehelmet.model.mappers.PlotMapper;
 import sa.whitehelmet.repository.PlotRepository;
 import sa.whitehelmet.service.PlotService;
@@ -47,6 +48,13 @@ public class PlotServiceImpl implements PlotService {
         var plot = plotRepository.findById(plotDTO.getId()).orElseThrow(()-> new PlotNotFoundException("Plot with Id : " + plotDTO.getId() + " Is not found", HttpStatus.NOT_FOUND.value()));
         plot.setWaterAmount(plotDTO.getWaterAmount());
         plot.setIrrigationPeriodInHours(plotDTO.getIrrigationPeriodInHours());
+        plotRepository.save(plot);
+    }
+
+    @Override
+    public void update(PlotUpdateRequestDTO dto) {
+        var plot = plotRepository.findById(dto.id()).orElseThrow(()-> new PlotNotFoundException("Plot with Id : " + dto.id() + " Is not found", HttpStatus.NOT_FOUND.value()));
+        new PlotMapper().toEntity(plot, dto);
         plotRepository.save(plot);
     }
 }
