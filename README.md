@@ -66,7 +66,7 @@ Building an Irrigation System with the following tasks
 Twilio SMS Example
 - Used Twilio with Account SID, Auth Token, Virtual Twilio phone number for sending SMS messages.
 
-![Alt text](src\main\resources\static\Alerting-Message.jpg)
+![Alt text](src/main/resources/static/Alerting-Message.jpg)
 
 ------
 - Try
