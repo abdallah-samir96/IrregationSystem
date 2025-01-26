@@ -57,7 +57,7 @@ Building an Irrigation System with the following tasks
 * you need to create database with the name **irrigation_system** and adding the credentials into the **application.properties** file.
 * Adding the configuration of datasource into the application.properties file (connection String, username, password, Driver)
 
-![Alt text](src\main\resources\static\irrigation_system-db.png)
+![Alt text](src/main/resources/static/irrigation_system-db.png)
 
 
 
