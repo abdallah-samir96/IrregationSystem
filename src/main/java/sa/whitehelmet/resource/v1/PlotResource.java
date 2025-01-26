@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sa.whitehelmet.model.dto.PlotDTO;
+import sa.whitehelmet.model.dto.PlotRequestDTO;
 import sa.whitehelmet.model.dto.WhiteHelmetResponse;
 import sa.whitehelmet.service.PlotService;
 
@@ -40,4 +41,10 @@ public class PlotResource {
                         .build();
         return ResponseEntity.ok(response);
    }
+
+    @PutMapping("/configure")
+    public void configure(@RequestBody @Valid PlotRequestDTO plotDTO) {
+        plotService.configure(plotDTO);
+    }
+
 }

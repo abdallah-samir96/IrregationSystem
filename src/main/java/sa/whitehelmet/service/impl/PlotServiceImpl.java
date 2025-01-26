@@ -3,8 +3,11 @@ package sa.whitehelmet.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import sa.whitehelmet.exception.PlotNotFoundException;
 import sa.whitehelmet.model.dto.PlotDTO;
+import sa.whitehelmet.model.dto.PlotRequestDTO;
 import sa.whitehelmet.model.mappers.PlotMapper;
 import sa.whitehelmet.repository.PlotRepository;
 import sa.whitehelmet.service.PlotService;
@@ -37,5 +40,13 @@ public class PlotServiceImpl implements PlotService {
     @Override
     public Long count() {
         return plotRepository.count();
+    }
+
+    @Override
+    public void configure(PlotRequestDTO plotDTO) {
+        var plot = plotRepository.findById(plotDTO.getId()).orElseThrow(()-> new PlotNotFoundException("Plot with Id : " + plotDTO.getId() + " Is not found", HttpStatus.NOT_FOUND.value()));
+        plot.setWaterAmount(plotDTO.getWaterAmount());
+        plot.setIrrigationPeriodInHours(plotDTO.getIrrigationPeriodInHours());
+        plotRepository.save(plot);
     }
 }

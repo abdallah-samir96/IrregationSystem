@@ -9,4 +9,8 @@
         <comment>creating the plot of land table</comment>
         <sqlFile path="./tables/table-001.sql" relativeToChangelogFile="true" splitStatements="true"/>
     </changeSet>
+    <changeSet id="TABLE-002" author="abdallahsameer22@gmail.com" runOnChange="false">
+        <comment>Adding amount of water column into plot table</comment>
+        <sqlFile path="./tables/table-002.sql" relativeToChangelogFile="true" splitStatements="true"/>
+    </changeSet>
 </databaseChangeLog>

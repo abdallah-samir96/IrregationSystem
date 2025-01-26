@@ -12,6 +12,7 @@ public class PlotMapper implements Mapper<Plot, PlotDTO>{
         plot.setDescription(dto.description());
         plot.setStatus(dto.status() == null? PlotStatus.NEW: dto.status());
         plot.setIrrigationPeriodInHours(dto.irrigationPeriodInHours());
+        plot.setWaterAmount(dto.waterAmount());
         return plot;
     }
 
@@ -23,6 +24,7 @@ public class PlotMapper implements Mapper<Plot, PlotDTO>{
                 entity.getDescription(),
                 entity.getStatus(),
                 entity.getIrrigationPeriodInHours(),
+                entity.getWaterAmount(),
                 entity.getCreatedAt(),
                 entity.getIrrigatedAt()
         );

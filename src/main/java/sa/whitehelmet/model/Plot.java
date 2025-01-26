@@ -19,6 +19,8 @@ public class Plot {
     private PlotStatus status;
     @Column(name = "irrigation_period_in_hours")
     private Integer irrigationPeriodInHours;
+    @Column(name = "amount_of_water")
+    private Integer waterAmount;
     @Column(name = "created_at", nullable = false)
     private ZonedDateTime createdAt;
     @Column(name = "irrigated_at")
@@ -81,6 +83,14 @@ public class Plot {
         this.irrigatedAt = irrigatedAt;
     }
 
+    public Integer getWaterAmount() {
+        return waterAmount;
+    }
+
+    public void setWaterAmount(Integer waterAmount) {
+        this.waterAmount = waterAmount;
+    }
+
     @Override
     public String toString() {
         return "Plot{" +
@@ -89,6 +99,7 @@ public class Plot {
                 ", description='" + description + '\'' +
                 ", status=" + status +
                 ", irrigationPeriodInHours=" + irrigationPeriodInHours +
+                ", waterAmount=" + waterAmount +
                 ", createdAt=" + createdAt +
                 ", irrigatedAt=" + irrigatedAt +
                 '}';
