@@ -1,27 +1,28 @@
-# Automatic Irrigation System
+# <ins>Automatic Irrigation System</ins>
 
 ### **POC Description**
 
 -----
-Building an Irrigation System where users can
+Building an Irrigation System with the following tasks
 - **Create Plot Of land.**
 - **Configure a plot of land.**
 - **Edit a plot of land.**
 - **List all plots and it's details.**
 - **Integration interface with the sensor device once a plot of land
-  need to be irrigate.**
+  need to be irrigated.**
 - **Update the status of the slot once the request is successfully sent
   to the sensor device.**
 - **Retry calls to the sensor device in case the sensor not available
   (pre configured.**
 - **Alerting system to be implemented in case the sensor not
-  available and after exceeding the retry times.**
+  available and after exceeding the retry times using Twilio.**
 
-## The Mocking Server
-- Simple server contains API to integrate with from the irrigation system
-- it should be started before running the irrigation system
-- go to the directory containing **sensor-system.jar** file and try with this command
+## Mocking Server As Sensor Integration
+- A Simple server contains one API to integrate with from the irrigation system
+- It should be started before running the irrigation system
+- go to the current directory containing **sensor-system.jar** file and try with this command
  `java -jar sensor-system.jar`
+- The sensor-system.jar responsible for changing the status of plots and update irrigation time slot to the current.
 ### Documentation For RESTful Api Usage (Resources and Endpoints)
 
 📧 https://documenter.getpostman.com/view/28448487/2sAYQgg7vq
@@ -39,16 +40,13 @@ Building an Irrigation System where users can
 * Postman to test APIs
 * Postgresql Database
 * Liquibase As Database Migration Tool
+* Twilio For sending SMS
 ### 🛠 Work With Maven(software project management)
 
 ---
 * Configure the pom.xml file
 * Deploy the application using maven with spring-boot plugin and tomcat web container.
 
-for generating the jar file and running all test cases we can use this command
-
-`mvn clean package spring-boot:run` used to generate the jar file
-and deploy it automatically into Tomcat Web server.
 
 
 
@@ -56,17 +54,23 @@ and deploy it automatically into Tomcat Web server.
 ### Postgresql DataBase
 
 ---
-* you need to create database **irrigation_system** and adding the credentials into the **application.properties** file
+* you need to create database with the name **irrigation_system** and adding the credentials into the **application.properties** file.
 * Adding the configuration of datasource into the application.properties file (connection String, username, password, Driver)
-* Adding Liquibase Configuration to apply the changesets when the application starts.
+
+![Alt text](src\main\resources\static\irrigation_system-db.png)
 
 
 
+
+------
+Twilio SMS Example
+- Used Twilio with Account SID, Auth Token, Virtual Twilio phone number for sending SMS messages.
+
+![Alt text](src\main\resources\static\Alerting-Message.jpg)
+
+------
 - Try
-  `mvn clean spring-boot:run` to run the application
-
-
-
+  `mvn clean spring-boot:run` to run the main application.
 ------
 ### My  Accounts (LINKEDIN, HACKERRANK)
 
