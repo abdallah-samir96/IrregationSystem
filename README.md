@@ -13,17 +13,19 @@ Building an Irrigation System with the following tasks
 - **Update the status of the slot once the request is successfully sent
   to the sensor device.**
 - **Retry calls to the sensor device in case the sensor not available
-  (pre configured.**
+  (pre-configured.**
 - **Alerting system to be implemented in case the sensor not
   available and after exceeding the retry times using Twilio.**
 
 ## Mocking Server As Sensor Integration
-- A Simple server contains one API to integrate with from the irrigation system
+- A Simple server contains one API to integrate with the irrigation system
 - It should be started before running the irrigation system
 - go to the current directory containing **sensor-system.jar** file and try with this command
  `java -jar sensor-system.jar`
-- The sensor-system.jar responsible for changing the status of plots and update irrigation time slot to the current.
-### Documentation For RESTful Api Usage (Resources and Endpoints)
+- you should have a database on your machine with the name **irrigation_system**
+- this service requires a database user with **postgres** as a username and **12345** as a password.
+- The sensor-system.jar is responsible for changing the status of plots and updating irrigation time slot to the current.
+### Documentation For RESTful API Usage (Resources and Endpoints)
 
 📧 https://documenter.getpostman.com/view/28448487/2sAYQgg7vq
 
