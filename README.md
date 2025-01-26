@@ -23,7 +23,7 @@ Building an Irrigation System with the following tasks
 - go to the current directory containing **sensor-system.jar** file and try with this command
  `java -jar sensor-system.jar`
 - you should have a database on your machine with the name **irrigation_system**
-- this service requires a database user with **postgres** as a username and **12345** as a password.
+- this service requires a database user with **postgres** as a username and **12345** as a password so you need to create a user with these credentials.
 - The sensor-system.jar is responsible for changing the status of plots and updating irrigation time slot to the current.
 ### Documentation For RESTful API Usage (Resources and Endpoints)
 
