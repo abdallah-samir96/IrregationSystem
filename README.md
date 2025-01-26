@@ -17,6 +17,11 @@ Building an Irrigation System where users can
 - **Alerting system to be implemented in case the sensor not
   available and after exceeding the retry times.**
 
+## The Mocking Server
+- Simple server contains API to integrate with from the irrigation system
+- it should be started before running the irrigation system
+- go to the directory containing **sensor-system.jar** file and try with this command
+ `java -jar sensor-system.jar`
 ### Documentation For RESTful Api Usage (Resources and Endpoints)
 
 📧 https://documenter.getpostman.com/view/28448487/2sAYQgg7vq
